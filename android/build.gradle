@@ -8,7 +8,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:8.3.2'
+
     }
 }
 
@@ -22,10 +23,11 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 35
+    namespace "pt.tribeiro.flutter_plugin_pdf_viewer"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 26
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
