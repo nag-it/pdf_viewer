@@ -1,8 +1,11 @@
+
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.9.21' // Use a stable Kotlin version compatible with Flutter
     repositories {
         google()
         jcenter()
+        mavenCentral()
+
     }
 
     dependencies {
@@ -16,6 +19,8 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+
     }
 }
 
@@ -24,15 +29,15 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
-    afterEvaluate { project ->
-        if (project.plugins.hasPlugin("com.android.application") ||
-                project.plugins.hasPlugin("com.android.library")) {
-            project.android {
-                compileSdkVersion 34
-                buildToolsVersion "34.0.0"
-            }
-        }
-    }
+//    afterEvaluate { project ->
+//        if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
+//            project.android {
+//                compileSdkVersion 34
+//                buildToolsVersion '34.0.0'
+//            }
+//        }
+//    }
+    project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {

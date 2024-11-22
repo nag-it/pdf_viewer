@@ -30,7 +30,6 @@ android {
 
     compileOptions {
         namespace "pt.tribeiro.flutter_plugin_pdf_viewer_example"
-        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
